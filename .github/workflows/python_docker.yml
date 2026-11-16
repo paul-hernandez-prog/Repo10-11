@@ -1,1 +1,17 @@
+name: Python Docker
+
+on: [push, workflow_dispatch]
+
+jobs:
+  ejecutar-python:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.12
+
+    steps:
+      - name: Verificar Python
+        run: python --version
+
+      - name: Ejecutar programa
+        run: python -c "print('Hola desde Python en Docker')"
 
